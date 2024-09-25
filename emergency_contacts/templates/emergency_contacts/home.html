@@ -1,0 +1,70 @@
+<!-- emergency_contacts/templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Contacts API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            color: #007bff;
+            text-align: center;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .endpoints {
+            margin-top: 20px;
+        }
+        .endpoint {
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+            background-color: #f1f1f1;
+        }
+        .method {
+            font-weight: bold;
+            color: #0056b3;
+        }
+        .endpoint-path {
+            color: #495057;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Emergency Contacts API</h1>
+        <p>This API allows you to manage emergency contacts by providing endpoints to create and delete contacts.</p>
+        
+        <div class="endpoints">
+            <h2>API Endpoints</h2>
+            <div class="endpoint">
+                <span class="method">POST</span>
+                <span class="endpoint-path">/api/contacts/</span>
+                <p>Create a new contact. Requires <code>first_name</code>, <code>last_name</code>, and <code>phone_number</code> in the request body.</p>
+            </div>
+            <div class="endpoint">
+                <span class="method">DELETE</span>
+                <span class="endpoint-path">/api/contacts/&lt;id&gt;/</span>
+                <p>Delete an existing contact by its ID.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

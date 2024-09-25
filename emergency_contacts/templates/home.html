@@ -1,0 +1,47 @@
+{% extends 'emergency_contacts/base.html' %}
+
+{% block content %}
+<h2>Welcome to the Emergency Contacts API</h2>
+<p>This API allows you to manage your emergency contacts.</p>
+{% endblock %}
+{% extends 'emergency_contacts/base.html' %}
+
+{% block content %}
+<h2>Create a New Contact</h2>
+<form method="POST" action="{% url 'create_contact' %}">
+    {% csrf_token %}
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" required><br>
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" required><br>
+    <label for="phone_number">Phone Number:</label>
+    <input type="text" id="phone_number" name="phone_number" required pattern="[0-9]{10}"><br>
+    <input type="submit" value="Create Contact">
+</form>
+{% endblock %}
+{% extends 'emergency_contacts/base.html' %}
+
+{% block content %}
+<h2>Create a New Contact</h2>
+<form method="POST" action="{% url 'create_contact' %}">
+    {% csrf_token %}
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" required><br>
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" required><br>
+    <label for="phone_number">Phone Number:</label>
+    <input type="text" id="phone_number" name="phone_number" required pattern="[0-9]{10}"><br>
+    <input type="submit" value="Create Contact">
+</form>
+{% endblock %}
+{% extends 'emergency_contacts/base.html' %}
+
+{% block content %}
+<h2>Delete a Contact</h2>
+<form method="POST" action="{% url 'delete_contact' contact.id %}">
+    {% csrf_token %}
+    <label for="contact_id">Contact ID:</label>
+    <input type="text" id="contact_id" name="contact_id" required><br>
+    <input type="submit" value="Delete Contact">
+</form>
+{% endblock %}
